@@ -1,0 +1,264 @@
+* {
+  all: unset;
+}
+
+.bar-class {
+  background: rgba(15, 14, 18, 0.85);
+  padding: 5px;
+}
+
+scale trough {
+  all: unset;
+  background-color: $black;
+  @include rounding;
+  min-height: 5px;
+  min-width: 80px;
+  margin: 0px 0px 0px 5px;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* =================== LEFT WIDGETS =================== */
+// Menu
+.menu {
+  .icon {
+    color: $purple;
+    font-size: 18px;
+    @include ubuntu;
+    margin: 0 0 0 12px;
+    transition: all 100ms;
+    transition: color 500ms ease;
+  }
+}
+
+// Clock & Date
+.clock {
+  background-color: $bg-alt;
+  border-radius: 10px;
+  padding: 0 18px 0 20px;
+  .icon {
+    color: $magenta;
+    font-size: 15px;
+    @include material;
+    margin: 0 1px 0 0;
+  }
+  .time {
+    color: $magenta;
+    font-size: 17px;
+    @include ubuntu;
+    font-weight: bold;
+    margin: 0 2px 0 -1px;
+  }
+  .AMPM {
+    color: $magenta;
+    font-size: 14px;
+    @include ubuntu;
+    font-weight: bold;
+    margin: 1px 0 0 -1px;
+  }
+}
+.date {
+  padding: 0 18px 0 20px;
+  .icon {
+    color: $cyan;
+    @include awesome;
+    font-size: 15px;
+    margin: 0 0 0 12px;
+  }
+  .text {
+    color: $cyan;
+    font-size: 17px;
+    @include ubuntu;
+    font-weight: bold;
+    margin: 0 0 0 4px;
+  }
+}
+
+// Music
+.music {
+  .art {
+    @include background;
+    min-height: 25px;
+    min-width: 30px;
+    border-radius: 20px;
+    transition: all 500ms ease-in-out;
+  }
+  .title {
+    color: $green;
+    font-size: 10pt;
+    @include sans;
+    font-weight: bold;
+  }
+  .toggle-icon {
+    @include ubuntu;
+    font-size: 21px;
+    margin: 0 -2px 0 -2px;
+  }
+  .previous-icon,
+  .next-icon {
+    @include material;
+    font-size: 19px;
+  }
+  .previous-icon,
+  .next-icon,
+  .toggle-icon {
+    color: $subtext0;
+    transition: all 500ms;
+    transition: color 300ms ease;
+    &:hover {
+      color: $pink;
+      transition: all 300ms;
+    }
+  }
+}
+
+/* =================== CENTER WIDGETS =================== */
+// Workspaces
+.workspaces {
+  color: $surface0;
+  @include ubuntu;
+  font-size: 14px;
+  border-radius: 10px;
+  transition: all 300ms;
+  transition: color 500ms ease;
+  .entry {
+    padding: 5px 10px;
+    &:hover {
+      color: $subtext0;
+    }
+  }
+  .occupied,
+  .empty {
+    color: $surface0;
+    transition: all 300ms;
+  }
+  .current {
+    color: $subtext0;
+    transition: all 300ms;
+  }
+}
+
+/* =================== RIGHT WIDGETS =================== */
+// Tray
+.tray {
+  .icon {
+    color: rgba(5, 5, 5, 0);
+    font-size: 26px;
+    margin: 2px 0 0 0;
+    transition: all 100ms;
+    transition: color 500ms ease;
+    &:hover {
+      color: $text;
+      transition: all 300ms;
+    }
+  }
+}
+
+// System Stats
+.cpu {
+  .progress {
+    color: $red;
+    background-color: $black;
+  }
+  .inside {
+    padding: 12px;
+  }
+  .label {
+    color: $fg-alt;
+    @include sans;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.memory {
+  .progress {
+    color: $magenta;
+    background-color: $black;
+  }
+  .inside {
+    padding: 12px;
+  }
+  .label {
+    color: $fg-alt;
+    @include sans;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+// Control
+.control {
+  background-color: $bg-alt;
+  padding: 0 18px 0 20px;
+  border-radius: 10px;
+}
+
+.bell {
+  &.icon {
+    color: $fg;
+    font-size: 14px;
+    @include ubuntu;
+  }
+}
+
+.pacman {
+  .icon {
+    color: $dark-yellow;
+    @include ubuntu;
+    font-size: 16px;
+  }
+  .label {
+    color: $fg;
+    font-size: 15px;
+    @include sans;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+  }
+}
+
+.volume {
+  .icon {
+    font-size: 20px;
+    @include material;
+    transition: all 500ms;
+  }
+  .bar {
+    trough highlight {
+      background: $mauve;
+      min-height: 0.3em;
+      @include rounding;
+    }
+    slider {
+      &:hover {
+        background: $mauve;
+        border-radius: 100%;
+        margin: -5px;
+      }
+    }
+  }
+}
+
+.network {
+  .icon {
+    @include ubuntu;
+    font-size: 18px;
+    transition: all 500ms;
+  }
+  .label {
+    color: $fg;
+    font-size: 15px;
+    @include sans;
+    font-weight: bold;
+    margin: 0 0 0 5px;
+  }
+}
+
+// Powermenu
+.power {
+  .icon {
+    color: $dark-red;
+    font-size: 18px;
+    margin: 2px 12px 0 0;
+    transition: all 300ms;
+    transition: color 500ms ease;
+  }
+}

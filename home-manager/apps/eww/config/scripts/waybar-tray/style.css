@@ -1,0 +1,41 @@
+* {
+  color: #f3f9ff;
+  font-family: Segoe-Fluent-Icons, Segoe-UI;
+  font-weight: 600;
+}
+
+window#waybar {
+  background: none;
+  border-radius: 12px;
+}
+
+tooltip {
+  background: #141414;
+  border-radius: 4px;
+  border: 1px solid gray;
+}
+
+tooltip * {
+  padding: 2px;
+}
+
+#tray {
+  font-size: 40px;
+  font-weight: 200;
+  padding: 4px;
+  min-width: 100px;
+  min-height: 30px;
+  background: #1f1d2e;
+  border-radius: 12px;
+  border: 2px solid #787d9a;
+}
+
+#idle_inhibitor {
+  font-weight: 200;
+  padding: 4px;
+  min-width: 30px;
+  min-height: 30px;
+  background: #1f1d2e;
+  border-radius: 12px;
+  border: 2px solid #787d9a;
+}

@@ -1,0 +1,51 @@
+* {
+  all: unset;
+  transition: 200ms ease-out;
+}
+
+@import "./colors.scss";
+
+@mixin background {
+  background-color: $bg;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin border {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+@mixin rounding {
+  border-radius: 15px;
+}
+
+@mixin ubuntu {
+  font-family: "Ubuntu Nerd Font";
+}
+@mixin sans {
+  font-family: "Product Sans", Roboto, sans-serif;
+}
+@mixin material {
+  font-family: "Material Icons Round";
+}
+@mixin awesome {
+  font-family: "Font Awesome 6 Free";
+}
+
+tooltip {
+  @include sans;
+  font-weight: 500;
+  font-size: 1rem;
+  color: $fg-alt;
+  background-color: $bg1;
+  @include border;
+  border-radius: 10px;
+}
+
+@import "./bar/eww.scss";
+@import "./player/eww.scss";
+@import "./powermenu/eww.scss";
+@import "./notifications/eww.scss";
+@import "./volume/eww.scss";
+@import "./calendar/eww.scss";

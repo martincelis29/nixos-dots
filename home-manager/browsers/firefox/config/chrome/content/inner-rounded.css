@@ -1,0 +1,7 @@
+/* make borders from inner content rounded */
+@media all and (display-mode: browser) {
+  #tabbrowser-tabpanels browser[type="content"] {
+    color-scheme: env(-moz-content-preferred-color-scheme);
+    border-top-left-radius: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+@import "extensions/tabcenter-reborn.css";
+
+#browser {
+  position: relative;
+}
+
+#sidebar-box:not([lwt-sidebar]) {
+  appearance: unset !important;
+}
+
+#main-window[inFullscreen] #sidebar {
+  height: 100vh;
+}

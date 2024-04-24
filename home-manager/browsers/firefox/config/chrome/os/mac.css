@@ -1,0 +1,18 @@
+/* macOS specific styles */
+@media (-moz-platform: macos) {
+  #TabsToolbar:not([customizing="true"]) {
+    visibility: collapse !important;
+  }
+
+  :root:not([customizing="true"]) #nav-bar:not([inFullscreen]) {
+    padding-left: 80px;
+  }
+
+  :root:not([customizing="true"]) #TabsToolbar .titlebar-buttonbox-container {
+    visibility: visible !important;
+    position: absolute;
+    top: 12px;
+    left: 0px;
+    display: block;
+  }
+}

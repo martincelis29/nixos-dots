@@ -1,0 +1,15 @@
+[pyprland]
+plugins = ["scratchpads", "magnify"]
+
+[scratchpads.term]
+command = "kitty --class kitty-scratchpad"
+animation = "fromBottom"
+margin = 20
+unfocus = "hide"
+
+[scratchpads.pavucontrol]
+command = "pavucontrol --name pavucontrol-scratchpad"
+animation = "fromRight"
+margin = 15
+unfocus = "hide"
+lazy = true

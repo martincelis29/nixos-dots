@@ -1,0 +1,25 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "spacing": 0,
+  "exclusive": false,
+  "margin-top": 0,
+  "margin-right": 400,
+  "margin-left": 1480,
+  "fixed-center": false,
+  "modules-left": [],
+  "modules-center": ["tray", "idle_inhibitor"],
+  "modules-right": [],
+  "tray": {
+    "icon-size": 17,
+    "spacing": 1
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  }
+}

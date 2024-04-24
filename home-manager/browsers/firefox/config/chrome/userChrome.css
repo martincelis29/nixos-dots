@@ -1,0 +1,22 @@
+/**--- Import external CSS file ---**/
+@import "navbar/navbar.css";
+@import "content/sidebar.css";
+@import "content/inner-rounded.css";
+@import "icons/icons.css";
+@import "os/linux.css";
+@import "os/mac.css";
+@import "os/windows.css";
+
+:root {
+	--bg0: #191724;
+	--bg1: #262339;
+
+	--delay: 0s; /* delay before expanding tabs, set to '0' for no delay */
+	--transition-time: 0.2s;
+	--positionX1: 48px; /* '48px' for left, '0px' for right sidebar */
+	--positionX2: absolute; /* 'absolute' for left, 'none' for right sidebar */
+	--fullscreen-sidebar-width: 1px; /* width of the collapsed sidebar in fullscreen mode ('1px' or '48px') */
+	--tabpanel-background-color: var(
+		--bg0
+	) !important; /* background color when starting firefox, or when loading pages (This property also affects the inner rounded) */
+}

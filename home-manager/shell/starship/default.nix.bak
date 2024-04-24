@@ -1,0 +1,216 @@
+{
+  pkgs,
+  lib,
+  ...
+}: {
+  #*------------------------
+  #* STARSHIP CONFIGURATION
+  #*------------------------
+  programs.starship = {
+    enable = true;
+    package = pkgs.starship;
+    settings = {
+      add_newline = true;
+      format = lib.strings.concatStrings [
+        #"[╭](bold #F5C2E7)"
+        "[](#3B4252)"
+        "$os"
+        #"$username"
+        "[](bg:#434C5E fg:#3B4252)"
+        "$directory"
+        "[](fg:#434C5E bg:#4C566A)"
+        "$git_branch"
+        "$git_status"
+        "[](fg:#4C566A bg:#4d4672)"
+        "$c"
+        "$golang"
+        "$haskell"
+        "$java"
+        "$lua"
+        "$nodejs"
+        "$perl"
+        "$php"
+        "$python"
+        "$rlang"
+        "$ruby"
+        "$rust"
+        "[](fg:#4d4672 bg:#4F367A)"
+        "$container"
+        "$docker_context"
+        "$kubernetes"
+        "$nix_shell"
+        "[](fg:#4F367A bg:#694AA1)"
+        "$time"
+        "[](fg:#694AA1)"
+        "$cmd_duration"
+        "$status"
+        "\n$character"
+      ];
+
+      os = {
+        disabled = false;
+        format = "$symbol";
+      };
+      os.symbols = {
+        Alpine = "[](fg:#0D597F bg:#3B4252)";
+        Arch = "[](fg:#0F94D2 bg:#3B4252)";
+        Artix = "[] (fg:#0F94D2 bg:#3B4252)";
+        Debian = "[](fg:#A80030 bg:#3B4252)";
+        EndeavourOS = "[](fg:#7E3EBE bg:#3B4252)";
+        Fedora = "[](fg:#3A65A4 bg:#3B4252)";
+        Gentoo = "[󰣨](fg:#BDB9DA bg:#3B4252)";
+        Macos = "[](fg:#BEC8E8 bg:#3B4252)";
+        Manjaro = "[](fg:#35BFA4 bg:#3B4252)";
+        NixOS = "[](fg:#7EB4DF bg:#3B4252)";
+        openSUSE = "[](fg:#73BA25 bg:#3B4252)";
+        SUSE = "[](fg:#73BA25 bg:#3B4252)";
+        Ubuntu = "[](fg:#E95420 bg:#3B4252)";
+      };
+      username = {
+        show_always = true;
+        style_user = "bg:#3B4252";
+        style_root = "bg:#3B4252";
+        format = "[ $user ]($style)";
+      };
+
+      directory = {
+        format = "[ $path ]($style)";
+        style = "bg:#434C5E";
+        truncation_length = 2;
+        truncation_symbol = "~/…/";
+      };
+      directory.substitutions = {
+        "Documents" = "";
+        "Downloads" = "";
+        "Music" = "";
+        "Pictures" = "";
+        "Videos" = "";
+        "Projects" = "󱌢";
+        "School" = "󰑴";
+        "GitHub" = "";
+        ".config" = "";
+      };
+
+      git_branch = {
+        symbol = "";
+        style = "bg:#4C566A";
+        format = "[ $symbol ($branch)]($style)";
+      };
+      git_status = {
+        style = "bg:#4C566A";
+        format = "[$all_status$ahead_behind ]($style)";
+      };
+
+      c = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#6496CE) ($version) ]($style)";
+      };
+      golang = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#68D3DF) ($version) ]($style)";
+      };
+      haskell = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#D47BEB) ($version) ]($style)";
+      };
+      java = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#E06B00) ($version) ]($style)";
+      };
+      lua = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#01007F) ($version) ]($style)";
+      };
+      nodejs = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#60B248) ($version) ]($style)";
+      };
+      perl = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#0192BB) ($version) ]($style)";
+      };
+      php = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#8790BA) ($version) ]($style)";
+      };
+      python = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#F9CB3E) ($version) ]($style)";
+      };
+      rlang = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#2265B8) ($version) ]($style)";
+      };
+      ruby = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#F3645C) ($version) ]($style)";
+      };
+      rust = {
+        symbol = "";
+        style = "bg:#4d4672";
+        format = "[ [$symbol](bg:#4d4672 fg:#EE7C00) ($version) ]($style)";
+      };
+
+      container = {
+        symbol = "󰏖";
+        style = "bg:#4F367A";
+        format = "[ [$symbol](bg:#4F367A fg:#CEB188) ]($style)";
+      };
+      docker_context = {
+        symbol = "";
+        style = "bg:#4F367A";
+        format = "[ [$symbol $context](bg:#4F367A fg:#1D63ED) ]($style) $path";
+      };
+      kubernetes = {
+        symbol = "󱃾";
+        style = "bg:#4F367A";
+        format = "[ [$symbol](bg:#4F367A fg:#3B9AD4) ($context) ]($style)";
+      };
+      nix_shell = {
+        disabled = false;
+        symbol = "";
+        style = "bg:#4F367A";
+        format = "[ [$symbol](bg:#4F367A fg:#80BAE0) $state ]($style)";
+      };
+
+      time = {
+        disabled = false;
+        time_format = "%I:%M"; # Hour:Minute Format
+        style = "bg:#694AA1";
+        format = "[ $time ]($style)";
+      };
+
+      cmd_duration = {
+        min_time = 100;
+        format = "[ $duration ](fg:yellow)";
+      };
+      status = {
+        symbol = "✗";
+        not_found_symbol = "󰍉 Not Found";
+        not_executable_symbol = " Can't Execute E";
+        sigint_symbol = "󰂭 ";
+        signal_symbol = "󱑽 ";
+        success_symbol = "";
+        format = "[ $symbol ](fg:red)";
+        map_symbol = true;
+        disabled = false;
+      };
+
+      character = {
+        success_symbol = "[ ╰─](bold #F5C2E7)";
+        error_symbol = "[ ╰─](bold #F38BA8)";
+      };
+    };
+  };
+}

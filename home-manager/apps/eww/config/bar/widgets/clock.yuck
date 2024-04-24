@@ -1,0 +1,54 @@
+;; =================== CLOCK WIDGET =====================
+(defwidget clock []
+  (eventbox
+    :onhover "${EWW_CMD} update date-rev=true"
+    :onhoverlost "${EWW_CMD} update date-rev=false"
+    
+    
+    (overlay
+      (box
+        :space-evenly false
+        :spacing 6
+        :class "clock"
+        (label
+          :class "icon"
+          :style {date-rev ? "color: rgba(0,0,0,0); text-shadow: none;" : ""}
+          :text ""
+        )
+        (label
+          :class "time"
+          :style {date-rev ? "color: rgba(0,0,0,0); text-shadow: none;" : ""}
+          :text {formattime(EWW_TIME, "%I : %M", "America/Santiago")}
+        )
+        (label
+          :class "AMPM"
+          :style {date-rev ? "color: rgba(0,0,0,0); text-shadow: none;" : ""}
+          :text {formattime(EWW_TIME, "%p", "America/Santiago")}
+        )
+      )
+      (revealer
+        :reveal date-rev
+        :transition "crossfade"
+        :duration "650ms"
+        (eventbox
+          :onclick "${EWW_CMD} open-many background-closer calendar"
+          (box
+            :class "date"
+            :space-evenly false
+            :spacing 6
+            (label
+              :class "icon"
+              :text ""
+            )
+            (label
+              :class "text"
+              :justify "center"
+              :text {formattime(EWW_TIME, "%b %d", "America/Santiago")}
+            )
+          )
+        )
+      )
+    )
+  )
+)
+

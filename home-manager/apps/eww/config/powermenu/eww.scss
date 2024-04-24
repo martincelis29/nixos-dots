@@ -1,0 +1,63 @@
+.powermenu {
+  @include background;
+  @include rounding;
+  padding: 20px;
+  .profile {
+    @include rounding;
+    padding: 20px;
+    .img {
+      @include rounding;
+      @include background;
+      min-height: 200px;
+      min-width: 200px;
+      box-shadow: -1px 1px 10px 5px rgba(0, 0, 0, 0.5);
+    }
+    .info {
+      color: $fg;
+      @include sans;
+      .name {
+        font-size: 30px;
+        font-weight: bold;
+      }
+      .wm {
+        font-size: 20px;
+        margin: 0 0 2px 0;
+      }
+      .uptime {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .buttons {
+    .shutdown,
+    .logout,
+    .reboot,
+    .suspend {
+      @include awesome;
+      font-size: 80px;
+      border-radius: 30px;
+      min-width: 130px;
+      min-height: 130px;
+      padding: 20px;
+      @include background;
+      transition: all 200ms;
+      &:hover {
+        transition: all 300ms;
+        background-color: $bg-alt;
+      }
+    }
+    .shutdown {
+      color: $dark-red;
+    }
+    .logout {
+      color: $pink;
+    }
+    .reboot {
+      color: $green;
+    }
+    .suspend {
+      color: $dark-yellow;
+    }
+  }
+}
