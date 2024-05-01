@@ -9,6 +9,6 @@
     ./docker
     #./moodle
     #./nginx
-    ./wordpress
+    #./wordpress
   ];
 }

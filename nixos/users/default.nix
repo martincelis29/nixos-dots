@@ -12,6 +12,6 @@
     isNormalUser = true;
     description = "Martin";
     # TODO: optional if docker.enable ++ docker
-    extraGroups = ["wheel" "networkmanager" "video" "audio" "docker" "82"];
+    extraGroups = ["wheel" "networkmanager" "video" "audio" "docker"];
   };
 }

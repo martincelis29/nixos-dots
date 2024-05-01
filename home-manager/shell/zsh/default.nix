@@ -14,6 +14,11 @@ in {
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    historySubstringSearch = {
+      enable = true;
+      searchUpKey = ["^[[A" "^[OA"];
+      searchDownKey = ["^[[B" "^[OB"];
+    };
     oh-my-zsh = {
       enable = true;
       plugins = [
@@ -27,6 +32,9 @@ in {
       compinit
       autoload -U bashcompinit && bashcompinit
       zstyle ':completion:*' menu select
+
+      # == Keybinds ==
+      bindkey '^H' backward-kill-word # ctrl + backspace
     '';
     shellAliases = {
       "home" = "cd ~";
