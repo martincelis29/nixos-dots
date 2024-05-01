@@ -104,7 +104,6 @@
     hostName = "Martin-Nixos"; # Hostname. # NotYourPC
     networkmanager.enable = true; # Enable networking
     # wireless.enable = true; # Enables wireless support via wpa_supplicant.
-    # Configure network proxy if necessary
     # proxy = {
     #   default = "http://user:password@proxy:port/";
     #   noProxy = "127.0.0.1,localhost,internal.domain";
@@ -112,7 +111,7 @@
   };
 
   #*--- KEYBOARD CONFIGURATIONS ---*#
-  # Configure keymap in X11
+  # Keymap in X11
   services.xserver = {
     xkb = {
       layout = "latam";

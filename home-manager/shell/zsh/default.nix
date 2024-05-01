@@ -34,10 +34,10 @@ in {
       "cd.." = "cd ..";
       "..." = "cd ../..";
       "cls" = "clear";
-      "ls" = "eza --long --icons always --group-directories-first --smart-group";
-      "ll" = "eza --long --icons always --group-directories-first --smart-group --group --all";
+      "ls" = "${pkgs.eza}/bin/eza --color=always --long --git --icons always --group-directories-first --no-filesize --no-time --no-user --no-permissions";
+      "ll" = "${pkgs.eza}/bin/eza --color=always --long --git --icons always --group-directories-first --smart-group --group --all";
       "lt" = "tree --dirsfirst";
-      "f" = "fd . -c always | grep --color=auto";
+      "f" = "${pkgs.fd}/bin/fd . -c always | grep --color=auto";
       "mktar" = "tar -cvf";
       "mkbz2" = "tar -cvjf";
       "mkgz" = "tar -cvzf";

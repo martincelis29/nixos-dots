@@ -37,7 +37,7 @@
     (python311.withPackages (ps:
       with ps; [
         pip
-        # pipx
+        pipx
 
         #python-pam
         #pytube

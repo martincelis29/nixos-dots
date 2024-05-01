@@ -26,6 +26,7 @@
     ...
   } @ inputs: let
     username = "martin";
+    host = "Nixos";
     system = "x86_64-linux";
   in {
     # NixOS configuration entrypoint

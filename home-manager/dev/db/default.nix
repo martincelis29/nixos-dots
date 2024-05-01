@@ -9,7 +9,7 @@
     #sqlite
 
     #*--- MONGODB ---*#
-    mongosh
-    mongodb-compass
+    # mongosh
+    # mongodb-compass
   ];
 }

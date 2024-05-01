@@ -29,7 +29,8 @@ in {
     imagemagick
     wlsunset
 
-    plugins.pyprland
+    pkgs.pyprland
+    # plugins.pyprland
   ];
 
   #*--- SCRIPTS ---*#
@@ -39,13 +40,13 @@ in {
   };
 
   #*--- PLUGINS ---*#
-  nixpkgs.overlays = [
-    (final: prev: {
-      plugins = {
-        pyprland = pkgs.callPackage ./plugins/pyprland {};
-      };
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     plugins = {
+  #       pyprland = pkgs.callPackage ./plugins/pyprland {};
+  #     };
+  #   })
+  # ];
   home.file.".config/hypr/pyprland.toml" = {
     text = pyprland;
   };
