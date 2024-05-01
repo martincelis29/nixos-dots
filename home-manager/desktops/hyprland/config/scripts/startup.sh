@@ -22,3 +22,6 @@ sleep 1 && wlsunset -T 5000 -t 4500 &
 
 # Mute Microphone
 wpctl set-mute @DEFAULT_AUDIO_SOURCE@ 1
+
+# Fix apps like gparted not staring (error: cannot open display: :0) source: https://askubuntu.com/questions/939938/gparted-cannot-open-display
+xhost +local:

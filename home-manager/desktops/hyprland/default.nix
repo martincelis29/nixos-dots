@@ -28,6 +28,7 @@ in {
     gnome.eog
     imagemagick
     wlsunset
+    xorg.xhost
 
     pkgs.pyprland
     # plugins.pyprland
