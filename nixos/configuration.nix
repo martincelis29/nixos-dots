@@ -161,6 +161,8 @@
     # home-manager
     home-manager
   ];
+  # Add completion for system packages
+  environment.pathsToLink = ["/share/zsh"];
 
   #*--- PORTAL CONFIGURATION ---*#
   xdg.portal = {
