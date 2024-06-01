@@ -19,6 +19,7 @@
     ./hardware-configuration.nix
 
     ./configs
+    # ./apps
     ./desktops #TODO
     ./dev
     ./security
@@ -74,6 +75,7 @@
   hardware = {
     opengl = {
       enable = true;
+      driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         intel-ocl
@@ -180,6 +182,15 @@
   #*--- DCONF CONFIGURATION ---*#
   programs.dconf = {
     enable = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    package = pkgs.steam;
+    extest = {enable = true;};
+    dedicatedServer = {openFirewall = true;};
+    localNetworkGameTransfers = {openFirewall = true;};
+    remotePlay = {openFirewall = true;};
   };
 
   #*--- NixOS VERSION ---*#

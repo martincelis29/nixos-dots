@@ -97,7 +97,6 @@
     # apps
     gnome.nautilus
     gnome.totem
-    spotify
     webcord
     slack
     font-manager

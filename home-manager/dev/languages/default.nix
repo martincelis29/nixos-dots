@@ -27,6 +27,7 @@
     #*--- NodeJS ---*#
     nodejs_20
     sassc
+    #yarn
     #bun
     #hugo
 
@@ -67,6 +68,6 @@
     #*--- Java ---*#
     # jdk
     # android-studio
-    android-tools
+    # android-tools
   ];
 }

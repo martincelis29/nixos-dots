@@ -108,24 +108,24 @@ in {
 
       container = {
         symbol = "󰏖";
-        style = "bg:#4F367A";
-        format = "[ [$symbol](bg:#4F367A fg:#CEB188) ]($style)";
+        style = "fg:gray";
+        format = "[[](fg:#4F367A)[$symbol](bg:#4F367A fg:#CEB188)[](fg:#4F367A) ]($style)";
       };
       docker_context = {
         symbol = "";
-        style = "bg:#4F367A";
-        format = "[ [$symbol $context](bg:#4F367A fg:#1D63ED) ]($style) $path";
+        style = "fg:gray";
+        format = "[[](fg:#4F367A)[$symbol $context](bg:#4F367A fg:#1D63ED)[](fg:#4F367A) ]($style) $path";
       };
       kubernetes = {
         symbol = "󱃾";
-        style = "bg:#4F367A";
-        format = "[ [$symbol](bg:#4F367A fg:#3B9AD4) ($context) ]($style)";
+        style = "fg:gray";
+        format = "[[](fg:#4F367A)[$symbol](bg:#4F367A fg:#3B9AD4)[](fg:#4F367A) ($context) ]($style)";
       };
       nix_shell = {
         disabled = false;
-        symbol = "";
-        style = "bg:#4F367A";
-        format = "[ [$symbol](bg:#4F367A fg:#80BAE0) $state ]($style)";
+        symbol = "";
+        style = "fg:gray";
+        format = "[[](fg:#4F367A)[$symbol](bg:#4F367A fg:#80BAE0)[](fg:#4F367A) $state ]($style)";
       };
       # time = {
       #   disabled = false;

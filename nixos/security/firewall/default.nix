@@ -8,13 +8,11 @@
   #*------------------------
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [
-      #   # # Nginx
-      #   # 80
-      #   # 443
-      5173
-      4321
-    ];
+    # allowedTCPPorts = [
+    # Web Server
+    # 80
+    # 443
+    # ];
     # allowedUDPPorts = [
     # ];
 
