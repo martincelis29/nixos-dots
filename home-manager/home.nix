@@ -113,6 +113,8 @@ in {
 
     # ags
     inputs.ags.packages.${system}.default
+
+    spotify
   ];
 
   #*--- HOME-MANAGER ---*#
