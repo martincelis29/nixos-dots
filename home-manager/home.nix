@@ -14,7 +14,9 @@
   pkgs,
   username,
   ...
-}: {
+}: let
+  spotify = pkgs.callPackage ../packages/spotify {};
+in {
   imports = [
     ./apps #TODO
     ./browsers
