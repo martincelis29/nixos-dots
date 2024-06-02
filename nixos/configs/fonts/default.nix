@@ -4,8 +4,8 @@
   lib,
   ...
 }: let
-  material-icons-and-symbols = pkgs.callPackage ./material-icons-and-symbols {};
-  sn-pro = pkgs.callPackage ./sn-pro {};
+  material-icons-and-symbols = pkgs.callPackage ../../../packages/material-icons-and-symbols {};
+  sn-pro = pkgs.callPackage ../../../packages/sn-pro {};
 in {
   #*--------------------
   #* FONT CONFIGURATION

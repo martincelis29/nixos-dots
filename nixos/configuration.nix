@@ -19,7 +19,7 @@
     ./hardware-configuration.nix
 
     ./configs
-    # ./apps
+    ./apps
     ./desktops #TODO
     ./dev
     ./security
@@ -182,15 +182,6 @@
   #*--- DCONF CONFIGURATION ---*#
   programs.dconf = {
     enable = true;
-  };
-
-  programs.steam = {
-    enable = true;
-    package = pkgs.steam;
-    extest = {enable = true;};
-    dedicatedServer = {openFirewall = true;};
-    localNetworkGameTransfers = {openFirewall = true;};
-    remotePlay = {openFirewall = true;};
   };
 
   #*--- NixOS VERSION ---*#

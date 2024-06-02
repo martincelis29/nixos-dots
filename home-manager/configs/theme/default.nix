@@ -1,23 +1,23 @@
 {pkgs, ...}: let
-  callPackage = pkgs.callPackage;
+  rose-pine-gtk = pkgs.callPackage ../../../packages/rose-pine {};
   cssContent = builtins.readFile ./rose-pine/gtk-4.0/gtk.css;
 in {
   #*---------------------
   #* THEME CONFIGURATION
   #*---------------------
-  nixpkgs.overlays = [
-    (final: prev: {
-      gtk-theme = {
-        rose-pine-gtk = callPackage ./rose-pine {};
-      };
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (final: prev: {
+  #     gtk-theme = {
+  #       rose-pine-gtk = callPackage ./rose-pine {};
+  #     };
+  #   })
+  # ];
 
   gtk = {
     enable = true;
     theme = {
       name = "RosePine-Main-BL";
-      package = pkgs.gtk-theme.rose-pine-gtk;
+      package = rose-pine-gtk;
     };
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;

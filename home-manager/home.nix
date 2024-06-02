@@ -89,7 +89,7 @@
     #scrcpy # Display and control Android devices over USB or TCP/IP
     #k6
     nh
-    nikto
+    # nikto
 
     # quickgui
     # quickemu

@@ -1,12 +1,13 @@
 {pkgs, ...}: let
-  hyprland = builtins.readFile ./config/hyprland.conf;
-  pyprland = builtins.readFile ./plugins/pyprland/pyprland.toml;
+  hyprland-conf = builtins.readFile ./config/hyprland.conf;
+  pyprland-conf = builtins.readFile ./plugins/pyprland/pyprland.toml;
+  # pyprland = pkgs.callPackage ../../../packages/pyprland {};
 in {
   #*------------------------
   #* HYPRLAND CONFIGURATION
   #*------------------------
   home.file.".config/hypr/hyprland.conf" = {
-    text = hyprland;
+    text = hyprland-conf;
   };
 
   #*--- PACKAGES ---*#
@@ -31,7 +32,6 @@ in {
     xorg.xhost
 
     pkgs.pyprland
-    # plugins.pyprland
   ];
 
   #*--- SCRIPTS ---*#
@@ -41,14 +41,7 @@ in {
   };
 
   #*--- PLUGINS ---*#
-  # nixpkgs.overlays = [
-  #   (final: prev: {
-  #     plugins = {
-  #       pyprland = pkgs.callPackage ./plugins/pyprland {};
-  #     };
-  #   })
-  # ];
   home.file.".config/hypr/pyprland.toml" = {
-    text = pyprland;
+    text = pyprland-conf;
   };
 }
